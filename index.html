@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monastery360 – Explore Sikkim's Heritage</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/placeholder.svg?height=40&width=120" alt="Monastery360 Logo">
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#monasteries" class="nav-link">Monasteries</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#calendar" class="nav-link">Cultural Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#events" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="InShot_20250911_232928820.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sikkim</h1>
+            <p class="hero-subtitle">Explore Sikkim's Sacred Heritage</p>
+            <p class="hero-description">Discover ancient monasteries, vibrant festivals, and the spiritual heart of the Himalayas</p>
+            <button class="cta-button">Begin Your Journey</button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Featured Monasteries Section -->
+    <section id="monasteries" class="monasteries">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Monasteries</h2>
+                <p class="section-subtitle">Sacred spaces that have preserved Sikkim's spiritual heritage for centuries</p>
+            </div>
+            <div class="monasteries-grid" id="monasteries-grid">
+                <!-- Monastery cards will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Calendar Section -->
+    <section id="calendar" class="cultural-calendar">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cultural Calendar</h2>
+                <h3><p class="section-subtitle">Experience the vibrant festivals and ceremonies throughout the year</p></h3>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline" id="timeline">
+                    <!-- Timeline events will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Sikkim Section -->
+    <section id="explore" class="explore-sikkim">
+        <div class="parallax-container">
+            <div class="parallax-image" style="background-image: url('/placeholder.svg?height=800&width=1200')"></div>
+            <div class="parallax-content">
+                <h2>Explore the Land of Mystical Beauty</h2>
+                <p>From snow-capped peaks to ancient monasteries, Sikkim offers a journey through time and spirituality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gallery</h2>
+                <h3><p class="section-subtitle">Immerse yourself in the visual splendor of Sikkim's monasteries</p></h3>
+            </div>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tourist Info Section -->
+    <section id="tourist-info" class="tourist-info">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Plan Your Visit</h2>
+                <p class="section-subtitle">Everything you need to know for an unforgettable journey</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Travel Tips</h3>
+                    <p>Essential information for visiting Sikkim's monasteries and cultural sites</p>
+                    <button class="info-button">Learn More</button>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Local Cuisine</h3>
+                    <p>Discover authentic Sikkimese flavors and traditional monastery meals</p>
+                    <button class="info-button">Explore Food</button>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Accommodation</h3>
+                    <p>Find the perfect place to stay near monasteries and cultural sites</p>
+                    <button class="info-button">Find Hotels</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Monastery360</h3>
+                    <p>Preserving and sharing Sikkim's rich monastic heritage with the world</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#monasteries">Monasteries</a></li>
+                        <li><a href="#calendar">Cultural Calendar</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@monastery360.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Gangtok, Sikkim, India</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Monastery360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
