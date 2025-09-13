@@ -43,25 +43,34 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-video">
-            <video autoplay muted loop>
-                <source src="InShot_20250911_232928820.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Sikkim</h1>
-            <p class="hero-subtitle">Explore Sikkim's Sacred Heritage</p>
-            <p class="hero-description">Discover ancient monasteries, vibrant festivals, and the spiritual heart of the Himalayas</p>
-            <button class="cta-button">Begin Your Journey</button>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+   <!-- Hero Section -->
+<section id="home" class="hero" style="position: relative; height: 100vh; overflow: hidden;">
+
+  <!-- YouTube Video Background -->
+  <div class="hero-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+    <iframe width="100%" height="100%" 
+            src="https://www.youtube.com/embed/Yyiy0HqMQBw?autoplay=1&mute=1&loop=1&playlist=Yyiy0HqMQBw&controls=0&modestbranding=1&rel=0" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Dark overlay -->
+  <div class="hero-overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.4); z-index: 0;"></div>
+
+  <!-- Content -->
+  <div class="hero-content" style="position: relative; z-index: 1; text-align: center; top: 50%; transform: translateY(-50%); color: #fff;">
+    <h1 class="hero-title" style="font-size: 4rem; margin-bottom: 20px;">Sikkim</h1>
+    <p class="hero-subtitle" style="font-size: 1.5rem; margin-bottom: 15px;">Explore Sikkim's Sacred Heritage</p>
+    <p class="hero-description" style="font-size: 1.2rem; margin-bottom: 25px;">
+      Discover ancient monasteries, vibrant festivals, and the spiritual heart of the Himalayas
+    </p>
+    <button class="cta-button" style="padding: 12px 30px; font-size: 1rem; background-color: #ff6600; border: none; color: #fff; cursor: pointer; border-radius: 5px;">
+      Begin Your Journey
+    </button>
+  </div>
+
+</section>
+
 
     <!-- Featured Monasteries Section -->
     <section id="monasteries" class="monasteries">
@@ -92,15 +101,28 @@
     </section>
 
     <!-- Explore Sikkim Section -->
-    <section id="explore" class="explore-sikkim">
-        <div class="parallax-container">
-            <div class="parallax-image" style="background-image: url('/placeholder.svg?height=800&width=1200')"></div>
-            <div class="parallax-content">
-                <h2>Explore the Land of Mystical Beauty</h2>
-                <p>From snow-capped peaks to ancient monasteries, Sikkim offers a journey through time and spirituality</p>
-            </div>
-        </div>
-    </section>
+    <!-- Explore the Land of Mystical Beauty Section -->
+<section id="explore" class="explore-sikkim">
+  <div class="parallax-container">
+    <div class="parallax-image" style="background-image: url('public/sikkim-mountains.jpg');"></div>
+    <div class="parallax-content">
+      <h2>Explore the Land of Mystical Beauty</h2>
+      <p>
+        From <strong>snow-capped peaks like Kanchenjunga</strong>—the world’s third-highest mountain—to ancient monasteries steeped in centuries of spiritual heritage, Sikkim offers visitors a mesmerizing journey through time and tranquility. Nestled in the heart of the Himalayas, Sikkim is home to over 200 monasteries, each uniquely showcasing Tibetan Buddhist architecture, mesmerizing murals, and vibrant ceremonies.
+      </p>
+      <p>
+        Discover iconic sites such as <strong>Rumtek Monastery</strong>, known as the Dharma Chakra Centre, where you can witness monks’ daily rituals preserved for generations. Explore <strong>Pemayangtse Monastery</strong> and its renowned Mask Dance festival, or experience the peaceful serenity of Buddha Park in Ravangla with its giant golden Buddha statue.
+      </p>
+      <p>
+        Beyond spiritual heritage, Sikkim offers breathtaking natural beauty—from pristine lakes like Gurudongmar and Khecheopalri, to the scenic valleys of Yumthang and Zuluk’s historic Silk Route roads. Whether trekking Maenam Hill for panoramic views or exploring Temi’s tea gardens, this mystical land invites you to connect deeply with nature and culture.
+      </p>
+      <p>
+        With Monastery360’s digital platform, embark on immersive tours, discover rare manuscripts, and navigate an interactive map bringing Sikkim’s culture and nature to your fingertips. Let this mystical land awaken your senses and inspire a journey of discovery and spiritual awakening.
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
