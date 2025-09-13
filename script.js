@@ -292,31 +292,28 @@ async function loadGallery() {
 }
 
 // Enhanced Utility Functions
-function viewMonastery(id) {
-  // Enhanced monastery detail view with animation
-  const button = event.target
-  button.style.transform = "scale(0.95)"
-  button.innerHTML = "Loading..."
+function viewMonastery(event, id) {
+  const button = event.target;
+  button.style.transform = "scale(0.95)";
+  button.innerHTML = "Loading...";
 
   setTimeout(() => {
-    button.style.transform = "scale(1)"
-    button.innerHTML = "Learn More"
-    console.log(`Viewing monastery with ID: ${id}`)
-    alert(`Opening detailed view for monastery ${id}`)
-  }, 500)
+    button.style.transform = "scale(1)";
+    button.innerHTML = "Learn More";
+    alert(`Opening detailed view for monastery ${id}`);
+  }, 500);
 }
 
-function openGalleryItem(index) {
-  // Enhanced gallery lightbox with animation
-  const galleryItem = event.currentTarget
-  galleryItem.style.transform = "scale(1.1)"
+function openGalleryItem(event, index) {
+  const galleryItem = event.currentTarget;
+  galleryItem.style.transform = "scale(1.1)";
 
   setTimeout(() => {
-    galleryItem.style.transform = "scale(1.05)"
-    console.log(`Opening gallery item: ${index}`)
-    alert(`Opening gallery item ${index + 1}`)
-  }, 200)
+    galleryItem.style.transform = "scale(1.05)";
+    alert(`Opening gallery item ${index + 1}`);
+  }, 200);
 }
+
 
 // Initialize content when page loads
 document.addEventListener("DOMContentLoaded", () => {
@@ -370,3 +367,117 @@ window.addEventListener("scroll", () => {
     ticking = true
   }
 })
+
+// Initialize map on page load
+function initMap() {
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+  }).addTo(map);
+
+  return map;
+}
+
+
+fetch("http://localhost:3001/monasteries")
+  .then(res => res.json())
+  .then(data => {
+    console.log("Monasteries:", data);
+    // Example: add monastery names to a div
+    const container = document.getElementById("monastery-list");
+    data.forEach(m => {
+      const div = document.createElement("div");
+      div.textContent = `${m.name} - ${m.location}`;
+      container.appendChild(div);
+    });
+  })
+  .catch(err => console.error(err));
+
+  // Initialize Leaflet map centered on Sikkim
+const map = L.map('map').setView([27.533, 88.512], 8); // lat, lng, zoom
+
+// Add OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Famous monasteries in Sikkim
+const monasteries = [
+  { name: "Rumtek Monastery", lat: 27.332, lng: 88.613 },
+  { name: "Pemayangtse Monastery", lat: 27.299, lng: 88.239 },
+  { name: "Tashiding Monastery", lat: 27.322, lng: 88.327 },
+  { name: "Enchey Monastery", lat: 27.339, lng: 88.605 },
+  { name: "Ralong Monastery", lat: 27.095, lng: 88.401 }
+];
+
+// Add markers
+monasteries.forEach(m => {
+  L.marker([m.lat, m.lng])
+    .addTo(map)
+    .bindPopup(`<b>${m.name}</b>`);
+});
+
+
+
+const track = document.getElementById('carousel-track');
+const carousel = document.getElementById('carousel');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let index = 0;
+const visibleCards = 3;
+const originalCards = [...track.children];
+const cardWidth = track.children[0].offsetWidth + 20; // width + margin
+
+for (let i = 0; i < visibleCards; i++) {
+  track.appendChild(originalCards[i].cloneNode(true));
+  track.prepend(originalCards[originalCards.length - 1 - i].cloneNode(true));
+}
+
+track.style.transform = `translateX(-${cardWidth * visibleCards}px)`;
+
+let interval;
+
+function moveNext() {
+  index++;
+  track.style.transition = "transform 0.6s ease-in-out";
+  track.style.transform = `translateX(-${(visibleCards + index) * cardWidth}px)`;
+
+  if (index >= originalCards.length) {
+    setTimeout(() => {
+      track.style.transition = "none";
+      track.style.transform = `translateX(-${cardWidth * visibleCards}px)`;
+      index = 0;
+    }, 600);
+  }
+}
+
+function movePrev() {
+  index--;
+  track.style.transition = "transform 0.6s ease-in-out";
+  track.style.transform = `translateX(-${(visibleCards + index) * cardWidth}px)`;
+
+  if (index < 0) {
+    setTimeout(() => {
+      track.style.transition = "none";
+      track.style.transform = `translateX(-${cardWidth * (visibleCards + originalCards.length - 1)}px)`;
+      index = originalCards.length - 1;
+    }, 600);
+  }
+}
+
+function startCarousel() {
+  interval = setInterval(moveNext, 2500);
+}
+
+function stopCarousel() {
+  clearInterval(interval);
+}
+
+nextBtn.addEventListener('click', moveNext);
+prevBtn.addEventListener('click', movePrev);
+carousel.addEventListener('mouseenter', stopCarousel);
+carousel.addEventListener('mouseleave', startCarousel);
+
+startCarousel();

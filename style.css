@@ -290,6 +290,11 @@ section.animate {
   margin: 0 auto;
 }
 
+#monasteries {
+    margin-top: 10px; /* Adjust the value as needed */
+}
+
+
 /* Monasteries Section */
 .monasteries {
   background: #f8f9fa;
@@ -407,6 +412,10 @@ section.animate {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
+section {
+    margin-top: 10px; /* space above each section */
+}
+
 
 /* Cultural Calendar Section */
 .cultural-calendar {
@@ -520,6 +529,17 @@ section.animate {
   line-height: 1.6;
 }
 
+#calendar {
+    margin-bottom: 10px;  /* gap below Calendar section */
+    padding-bottom: 0;    /* optional, remove extra padding if any */
+}
+
+#explore {
+    margin-top: 0;        /* keep top margin 0 */
+    padding-top: 0;       /* remove internal padding if any */
+}
+
+
 /* Explore Sikkim Section */
 .explore-sikkim {
   height: 80vh;
@@ -569,6 +589,10 @@ section.animate {
 .parallax-content p {
   font-size: 1.3rem;
   opacity: 0.9;
+}
+
+section {
+    margin-top: 10px; /* space above each section */
 }
 
 /* Gallery Section */
@@ -1338,78 +1362,190 @@ body.dark-mode .tourist-info {
   pointer-events: none; /* makes sure it doesn't block clicks */
 }
 
+section {
+    margin-top: 10px; /* space above each section */
+}
+
+#map {
+  width: 100%;
+  height: 800px; /* or 500px, depending on your design */
+}  
+
+
 /* Ensure content appears above the blur */
 #calendar .container {
   position: relative;
   z-index: 1;
 }
 
-.explore-sikkim {
-  height: 80vh;
+
+
+/* Testimonials Section */
+.testimonials {
+  background: rgba(0, 0, 0, 0.65); /* semi-transparent overlay */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 60px 20px 100px 20px;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 30px 40px 20px rgba(0,0,0,0.5);
+  position: relative;
+  margin-top: 50px; /* gap from previous section */
+}
+
+.testimonials::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testimonials h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 3rem;
+  color: #f6d365;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
+}
+
+.testimonials h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track for sliding cards */
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Individual testimonial cards */
+.testimonial {
+  flex: 0 0 calc(100% / 3);
+  margin: 0 10px;
+  background: linear-gradient(135deg, #fceabb, #f8b500, #c13584, #5851db);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  color: white;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
 
-.parallax-container {
-  height: 100%;
-  position: relative;
-}
-
-.parallax-image {
+.testimonial::before,
+.testimonial::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120%;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.7);
-  z-index: 1;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: 0;
 }
 
-.parallax-content {
+.testimonial::before {
+  top: -30px;
+  left: -30px;
+}
+
+.testimonial::after {
+  bottom: -30px;
+  right: -30px;
+}
+
+.testimonial > * {
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  color: #fffacd;
+}
+
+.testimonial .desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Carousel navigation buttons */
+.prev, .next {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 700px;
+  transform: translateY(-50%);
+  background: rgba(246, 211, 101, 0.85);
+  border: none;
+  color: #333;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.prev:hover, .next:hover {
+  background: #c13584;
+  color: #fff;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .testimonial { flex: 0 0 45%; margin: 0 10px; }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial { flex: 0 0 90%; margin: 0 5px; }
+  .prev, .next { font-size: 1.3rem; width: 34px; height: 34px; }
+}
+
+.testimonials {
+  background: url('public/testimonials.jpeg') no-repeat center center;
+  background-size: cover; /* Make sure it covers entire section */
+  backdrop-filter: blur(5px); /* Optional blur over image */
+  -webkit-backdrop-filter: blur(5px);
+  padding: 60px 20px 100px 20px;
   text-align: center;
-  color: var(--text-light);
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2.5rem 3rem;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  animation: fadeInScale 1s ease-out;
-}
-
-.parallax-content h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.parallax-content p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-}
-
-@media (max-width: 768px) {
-  .parallax-content {
-    padding: 2rem;
-    max-width: 90%;
-  }
-
-  .parallax-content h2 {
-    font-size: 2rem;
-  }
-
-  .parallax-content p {
-    font-size: 1rem;
-  }
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  position: relative;
+  margin-top: 30px;
+  color: white;
 }

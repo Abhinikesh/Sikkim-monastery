@@ -1,0 +1,9 @@
+{
+  "monasteries": [
+    { "id": 1, "name": "Rumtek Monastery", "location": "Gangtok", "lat": 27.332, "lng": 88.613 },
+    { "id": 2, "name": "Pemayangtse Monastery", "location": "Pelling", "lat": 27.299, "lng": 88.239 }
+  ],
+  "events": [
+    { "id": 1, "title": "Losar Festival", "date": "2025-02-21", "monasteryId": 1 }
+  ]
+}

@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monastery360 – Explore Sikkim's Heritage</title>
+   <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+  /* Make the map occupy full viewport */
+  #map {
+    width: 100%;
+    height: 100vh; /* full height */
+  }
+</style>
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -101,25 +115,11 @@
     </section>
 
     <!-- Explore Sikkim Section -->
+      <!-- <h2>Explore the Land of Mystical Beauty</h2> -->
+
     <!-- Explore the Land of Mystical Beauty Section -->
-<section id="explore" class="explore-sikkim">
-  <div class="parallax-container">
-    <div class="parallax-image" style="background-image: url('public/sikkim-mountains.jpg');"></div>
-    <div class="parallax-content">
-      <h2>Explore the Land of Mystical Beauty</h2>
-      <p>
-        From <strong>snow-capped peaks like Kanchenjunga</strong>—the world’s third-highest mountain—to ancient monasteries steeped in centuries of spiritual heritage, Sikkim offers visitors a mesmerizing journey through time and tranquility. Nestled in the heart of the Himalayas, Sikkim is home to over 200 monasteries, each uniquely showcasing Tibetan Buddhist architecture, mesmerizing murals, and vibrant ceremonies.
-      </p>
-      <p>
-        Discover iconic sites such as <strong>Rumtek Monastery</strong>, known as the Dharma Chakra Centre, where you can witness monks’ daily rituals preserved for generations. Explore <strong>Pemayangtse Monastery</strong> and its renowned Mask Dance festival, or experience the peaceful serenity of Buddha Park in Ravangla with its giant golden Buddha statue.
-      </p>
-      <p>
-        Beyond spiritual heritage, Sikkim offers breathtaking natural beauty—from pristine lakes like Gurudongmar and Khecheopalri, to the scenic valleys of Yumthang and Zuluk’s historic Silk Route roads. Whether trekking Maenam Hill for panoramic views or exploring Temi’s tea gardens, this mystical land invites you to connect deeply with nature and culture.
-      </p>
-      <p>
-        With Monastery360’s digital platform, embark on immersive tours, discover rare manuscripts, and navigate an interactive map bringing Sikkim’s culture and nature to your fingertips. Let this mystical land awaken your senses and inspire a journey of discovery and spiritual awakening.
-      </p>
-    </div>
+   <section id="explore" class="explore-sikkim">
+  <div id="map" style="width:100%; height:1600px;"></div>
   </div>
 </section>
 
@@ -136,6 +136,43 @@
             </div>
         </div>
     </section>
+
+<!-- Testimonials section -->
+
+
+
+    <section class="testimonials">
+  <h2>Mystical Beauty</h2>
+  <h3>Discover the Spiritual Essence of Sikkim's Monasteries</h3>
+
+  <div class="carousel-container" id="carousel">
+    <button class="prev" aria-label="Previous">&#8592;</button>
+    <button class="next" aria-label="Next">&#8594;</button>
+    <div class="carousel-track" id="carousel-track">
+      <div class="testimonial">
+        <div class="title">Sacred Stories</div>
+        <div class="desc">Legends passed down generations—each monastery echoes with spiritual tales and timeless myths of Sikkim’s past.</div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Peaceful Escapes</div>
+        <div class="desc">Quiet courtyards and meditation caves offer sanctuary for the soul amidst whispering prayer flags and crisp mountain air.</div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Hidden Treasures</div>
+        <div class="desc">From tucked-away gompas to secret prayer paths, Sikkim’s lesser-known spots are jewels waiting to be uncovered.</div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Spiritual Essence</div>
+        <div class="desc">Feel the divine aura, the rhythmic chants, and the powerful stillness that defines every sacred corner of the Himalayas.</div>
+      </div>
+      <div class="testimonial">
+        <div class="title">Cultural Charm</div>
+        <div class="desc">Celebrate festivals, art, and monastic rituals that blend Tibetan, Nepali, and indigenous traditions in vibrant unity.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 
     <!-- Tourist Info Section -->
     <section id="tourist-info" class="tourist-info">
@@ -172,6 +209,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
